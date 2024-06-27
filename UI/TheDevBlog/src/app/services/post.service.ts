@@ -4,7 +4,7 @@ import { environment } from '../environments/environment';
 import { Post } from '../models/post.model';
 import { Observable } from 'rxjs';
 import { UpdatePostRequest } from '../models/update-post.model';
-
+import { AddPostRequest } from '../models/add-post.model';
 
 
 @Injectable({
@@ -28,6 +28,12 @@ export class PostService {
     return this.http.put<Post>(this.apiBaseUrl + '/api/posts/' + id, updatePostRequest);
   }
 
+  addPost(addPostRequest: AddPostRequest): Observable<Post>{
+    return this.http.post<Post>(this.apiBaseUrl + '/api/posts', addPostRequest);
+  }
 
+  deletePost(id: string): Observable<Post>{
+    return this.http.delete<Post>(this.apiBaseUrl + '/api/posts/' + id);
+  }
 }
 

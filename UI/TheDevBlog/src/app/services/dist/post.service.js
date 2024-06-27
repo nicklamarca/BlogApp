@@ -23,6 +23,12 @@ var PostService = /** @class */ (function () {
     PostService.prototype.updatePost = function (id, updatePostRequest) {
         return this.http.put(this.apiBaseUrl + '/api/posts/' + id, updatePostRequest);
     };
+    PostService.prototype.addPost = function (addPostRequest) {
+        return this.http.post(this.apiBaseUrl + '/api/posts', addPostRequest);
+    };
+    PostService.prototype.deletePost = function (id) {
+        return this.http["delete"](this.apiBaseUrl + '/api/posts/' + id);
+    };
     PostService = __decorate([
         core_1.Injectable({
             providedIn: 'root'
