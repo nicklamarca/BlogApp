@@ -8,20 +8,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 exports.__esModule = true;
 exports.AdminPostsComponent = void 0;
 var core_1 = require("@angular/core");
+var common_1 = require("@angular/common");
+var router_1 = require("@angular/router");
+var http_1 = require("@angular/common/http"); // Import HttpClientModule
 var AdminPostsComponent = /** @class */ (function () {
     function AdminPostsComponent(postService) {
         this.postService = postService;
+        this.posts = [];
     }
     AdminPostsComponent.prototype.ngOnInit = function () {
-        this.postService.getAllPosts().subscribe(function (posts) {
-            console.log(posts);
+        var _this = this;
+        this.postService.getAllPosts().subscribe(function (response) {
+            _this.posts = response;
         });
     };
     AdminPostsComponent = __decorate([
         core_1.Component({
             selector: 'app-admin-posts',
             standalone: true,
-            imports: [],
+            imports: [common_1.CommonModule, router_1.RouterModule, http_1.HttpClientModule],
             templateUrl: './admin-posts.component.html',
             styleUrl: './admin-posts.component.css'
         })

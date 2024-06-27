@@ -5,6 +5,7 @@ import { Post } from '../models/post.model';
 import { Observable } from 'rxjs';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -17,5 +18,11 @@ export class PostService {
   getAllPosts(): Observable<Post[]> {
     return this.http.get<Post[]>(this.apiBaseUrl + '/api/posts');
   }
+
+  getPostById(id: string): Observable<Post> {
+    return this.http.get<Post>(this.apiBaseUrl + '/api/posts/' + id);
+  }
+
+
 }
 
