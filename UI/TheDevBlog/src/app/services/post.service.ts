@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../environments/environment';
 import { Post } from '../models/post.model';
 import { Observable } from 'rxjs';
+import { UpdatePostRequest } from '../models/update-post.model';
 
 
 
@@ -21,6 +22,10 @@ export class PostService {
 
   getPostById(id: string): Observable<Post> {
     return this.http.get<Post>(this.apiBaseUrl + '/api/posts/' + id);
+  }
+
+  updatePost(id:string | undefined, updatePostRequest: UpdatePostRequest): Observable<Post>{
+    return this.http.put<Post>(this.apiBaseUrl + '/api/posts/' + id, updatePostRequest);
   }
 
 

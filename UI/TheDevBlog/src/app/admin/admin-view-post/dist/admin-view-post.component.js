@@ -27,6 +27,23 @@ var AdminViewPostComponent = /** @class */ (function () {
             }
         });
     };
+    AdminViewPostComponent.prototype.onSubmit = function () {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var updatePostRequest = {
+            author: (_a = this.post) === null || _a === void 0 ? void 0 : _a.author,
+            content: (_b = this.post) === null || _b === void 0 ? void 0 : _b.content,
+            featuredImageUrl: (_c = this.post) === null || _c === void 0 ? void 0 : _c.featuredImageUrl,
+            publishDate: (_d = this.post) === null || _d === void 0 ? void 0 : _d.publishDate,
+            updatedDate: (_e = this.post) === null || _e === void 0 ? void 0 : _e.updatedDate,
+            visible: (_f = this.post) === null || _f === void 0 ? void 0 : _f.visible,
+            summary: (_g = this.post) === null || _g === void 0 ? void 0 : _g.summary,
+            title: (_h = this.post) === null || _h === void 0 ? void 0 : _h.title,
+            urlHandle: (_j = this.post) === null || _j === void 0 ? void 0 : _j.urlHandle
+        };
+        this.postService.updatePost((_k = this.post) === null || _k === void 0 ? void 0 : _k.id, updatePostRequest).subscribe(function (response) {
+            alert('Post updated successfully');
+        });
+    };
     AdminViewPostComponent = __decorate([
         core_1.Component({
             selector: 'app-admin-view-post',

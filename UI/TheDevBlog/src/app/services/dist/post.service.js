@@ -20,6 +20,9 @@ var PostService = /** @class */ (function () {
     PostService.prototype.getPostById = function (id) {
         return this.http.get(this.apiBaseUrl + '/api/posts/' + id);
     };
+    PostService.prototype.updatePost = function (id, updatePostRequest) {
+        return this.http.put(this.apiBaseUrl + '/api/posts/' + id, updatePostRequest);
+    };
     PostService = __decorate([
         core_1.Injectable({
             providedIn: 'root'

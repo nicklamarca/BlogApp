@@ -2,7 +2,7 @@
     <h1>View Blog Details</h1>
     <br/>
     <br/>
-    <form #form="ngForm">
+    <form #form="ngForm" (ngSubmit)="onSubmit()">
         <div class="mb-3">
           <label class="form-label">Id</label>
           <input type="text" class="form-control" name="id" [(ngModel)]="post.id" readonly>
