@@ -52,5 +52,12 @@ export class AdminViewPostComponent {
       alert('Post updated successfully');
     });
   }
+
+  deletePost(): void{
+    this.postService.deletePost(this.post?.id).subscribe((response) => {
+      alert('Deleted successfully');
+    });
+  }
+
 }
 

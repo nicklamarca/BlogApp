@@ -43,7 +43,10 @@
             <label class="form-label">Updated Date</label>
             <input class="form-control" name="updatedDate" [(ngModel)]="post.updatedDate">
           </div>
-
-          <button class="btn btn-primary">Update</button>
+           <div>
+             <button class="btn btn-primary">Update</button>
+             <a class="btn btn-danger" style="margin-left: 20px;" (click)="deletePost()">Delete</a>
+           </div>
+         
     </form>
 </div>

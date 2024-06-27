@@ -44,6 +44,12 @@ var AdminViewPostComponent = /** @class */ (function () {
             alert('Post updated successfully');
         });
     };
+    AdminViewPostComponent.prototype.deletePost = function () {
+        var _a;
+        this.postService.deletePost((_a = this.post) === null || _a === void 0 ? void 0 : _a.id).subscribe(function (response) {
+            alert('Deleted successfully');
+        });
+    };
     AdminViewPostComponent = __decorate([
         core_1.Component({
             selector: 'app-admin-view-post',
