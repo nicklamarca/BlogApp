@@ -1,0 +1,16 @@
+<div class="container" *ngIf="posts" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; margin-top: 20px;">
+    <div *ngFor="let post of posts" class="card" style="max-width: 500px; margin: 0 auto;">
+        <img [src]="post.featuredImageUrl" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h2 class="card-title">
+            {{post.title}}
+          </h2>
+          <br/>
+          <article class="card-text">
+            {{post.summary}}
+          </article>
+          <br/>
+        <a class="btn btn-primary" [routerLink]="['/blog', post.id]">View BLog Post</a>
+        </div>
+    </div>
+</div>
